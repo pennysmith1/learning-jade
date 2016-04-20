@@ -1,0 +1,216 @@
+h1 Welcome to Jade
+p
+  | Text can be included in a number of
+  | different ways.
+p.
+  This way is shortest if you need big
+  blocks of text spanning multiple
+  lines.
+  
+h1#title Welcome to Jade
+button.btn(data-action="bea") Awesome
+
+div.section
+  h2#title2 Attributes
+  p.
+  a(href='google.com') Google
+  p.
+  a.btn(href='google.com') Google
+  p.
+  input(
+    type='checkbox'
+    name='agreement'
+    checked
+  )
+  p.
+  input(type='checkbox', checked)
+  input(type='checkbox', checked=true)
+  input(type='checkbox', checked=false)
+  input(type='checkbox', checked=true && 'checked')
+  p.
+  a(style={color: 'red', background: 'green'}, href='google.com') Google
+
+div.section
+  h2#title2 Case
+  p.
+  - var friends = 10
+  case friends
+    when 0
+      p you have no friends
+    when 1
+      p you have a friend
+    default
+      p you have #{friends} friends
+  p.
+  - var friends = 0
+  case friends
+    when 0
+    when 1
+      p you have very few friends
+    default
+      p you have #{friends} friends
+  p.
+  - var friends = 1
+  case friends
+    when 0: p you have no friends
+    when 1: p you have a friend
+    default: p you have #{friends} friends
+
+div.section
+  h2#title2 Code
+  p.
+  - for (var x = 0; x < 3; x++)
+    li item
+  p.
+  -
+    list = ["Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis"]
+  each item in list
+    li= item
+  p= 'This code is <escaped>!'
+  p!= 'This code is' + ' <strong>not</strong> escaped!'
+
+div.section
+  h2#title2 Comments
+  // just some paragraphs
+  p foo
+  p bar
+  //- will not output within markup
+  p foo
+  p bar
+  //
+    As much text as you want
+    can go here.
+
+div.section
+  h2#title2 Conditionals
+  p.
+  - var user = { description: '' }
+  - var authorised = true
+  #user
+    if user.description
+      h2 Description
+      p.description= user.description
+    else if authorised
+      h2 Description
+      p.description.
+        User has no description,
+        why not add one...
+    else
+      h1 Description
+      p.description User has no description
+
+div.section
+  h2#title2 Interpolation
+  - var title = "On Dogs: Man's Best Friend";
+  - var author = "enlore";
+  - var theGreat = "<span>escape!</span>";
+  h3= title
+  p Written with love by #{author}
+  p This will be safe: #{theGreat}
+  - var msg = "not my inside voice";
+  p This is #{msg.toUpperCase()}
+  - var riskyBusiness = "<em>Some of the girls are wearing my mother's clothing.</em>";
+  .quote
+    p Joel: !{riskyBusiness}
+  p.
+    This is how you use #[a(target="_blank", href="https://google.com") tag interpolation] in a paragraph.
+
+div.section
+  h2#title2 Iteration
+  ul
+    each val in [1, 2, 3, 4, 5]
+      li= val
+  ul
+    each val, index in ['zero', 'one', 'two']
+      li= index + ': ' + val
+  ul
+    each val, index in {1:'one',2:'two',3:'three'}
+      li= index + ': ' + val
+  - var values = [];
+  ul
+    each val in values.length ? values : ['There are no values']
+      li= val
+  - var values = ['one', 'two', 'three'];
+  ul
+    each val in values.length ? values : ['There are no values']
+      li= val
+  - var n = 0
+  ul
+    while n < 4
+      li= n++
+
+div.section
+  h2#title2 Mixins
+  //- Declaration
+  mixin list
+    ul
+      li foo
+      li bar
+      li baz
+  //- Use
+  +list
+  +list
+  
+  mixin pet(name)
+    li.pet= name
+  ul
+    +pet('cat')
+    +pet('dog')
+    +pet('pig')
+  
+  mixin article(title)
+    .article
+      .article-wrapper
+        h3= title
+        if block
+          block
+        else
+          p No content provided
+  +article('Hello world')
+  +article('Hello world')
+    p This is my
+    p Amazing article
+  
+  mixin link(href, name)
+    //- attributes == {class: "btn"}
+    a(class!=attributes.class, href=href)= name
+  +link('/foo', 'foo')(class="btn")
+  
+  mixin link(href, name)
+    a(href=href)&attributes(attributes)= name
+  +link('/foo', 'foo')(class="btn")
+  
+  mixin list(id, ...items)
+    ul(id=id)
+      each item in items
+        li= item
+  +list('my-list', 1, 2, 3, 4)
+
+div.section
+  h2#title2 Plain Text
+  | Plain text can include <strong>html</strong>
+  p
+    | It must always be on its own line
+  p Plain text can include <strong>html</strong>
+  script.
+    if (usingJade)
+      console.log('you are awesome')
+    else
+      console.log('use jade')
+
+div.section
+  h2#title2 Tags
+  h3 Nested
+  ul
+    li Item A
+    li Item B
+    li Item C
+  h3 Self closing
+  p Jade also knows which elements are self closing.
+  // img
+  // foo/
+  // foo(bar='baz')/
+  h3 Block Expansion
+  p To save space, jade provides an inline syntax for nested tags.
+  // a: img
+  

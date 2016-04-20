@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Welcome to Jade</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    
+<h1>Welcome to Jade</h1>
+<p>
+  Text can be included in a number of
+  different ways.
+</p>
+<p>
+  This way is shortest if you need big
+  blocks of text spanning multiple
+  lines.
+  
+</p>
+<h1 id="title">Welcome to Jade</h1>
+<button data-action="bea" class="btn">Awesome</button>
+<div class="section">
+  <h2 id="title2">Attributes</h2>
+  <p></p><a href="google.com">Google</a>
+  <p></p><a href="google.com" class="btn">Google</a>
+  <p></p>
+  <input type="checkbox" name="agreement" checked="checked"/>
+  <p></p>
+  <input type="checkbox" checked="checked"/>
+  <input type="checkbox" checked="checked"/>
+  <input type="checkbox"/>
+  <input type="checkbox" checked="checked"/>
+  <p></p><a style="color:red;background:green" href="google.com">Google</a>
+</div>
+<div class="section">
+  <h2 id="title2">Case</h2>
+  <p></p>
+  <p>you have 10 friends</p>
+  <p></p>
+  <p>you have very few friends</p>
+  <p></p>
+  <p>you have a friend</p>
+</div>
+<div class="section">
+  <h2 id="title2">Code</h2>
+  <p></p>
+  <li>item</li>
+  <li>item</li>
+  <li>item</li>
+  <p></p>
+  <li>Uno</li>
+  <li>Dos</li>
+  <li>Tres</li>
+  <li>Cuatro</li>
+  <li>Cinco</li>
+  <li>Seis</li>
+  <p>This code is &lt;escaped&gt;!</p>
+  <p>This code is <strong>not</strong> escaped!</p>
+</div>
+<div class="section">
+  <h2 id="title2">Comments</h2>
+  <!-- just some paragraphs-->
+  <p>foo</p>
+  <p>bar</p>
+  <p>foo</p>
+  <p>bar</p>
+  <!--
+  As much text as you want
+  can go here.
+  
+  -->
+</div>
+<div class="section">
+  <h2 id="title2">Conditionals</h2>
+  <p></p>
+  <div id="user">
+    <h2>Description</h2>
+    <p class="description">
+      User has no description,
+      why not add one...
+    </p>
+  </div>
+</div>
+<div class="section">
+  <h2 id="title2">Interpolation</h2>
+  <h3>On Dogs: Man's Best Friend</h3>
+  <p>Written with love by enlore</p>
+  <p>This will be safe: &lt;span&gt;escape!&lt;/span&gt;</p>
+  <p>This is NOT MY INSIDE VOICE</p>
+  <div class="quote">
+    <p>Joel: <em>Some of the girls are wearing my mother's clothing.</em></p>
+  </div>
+  <p>This is how you use <a target="_blank" href="https://google.com">tag interpolation</a> in a paragraph.
+    
+  </p>
+</div>
+<div class="section">
+  <h2 id="title2">Iteration</h2>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <ul>
+    <li>0: zero</li>
+    <li>1: one</li>
+    <li>2: two</li>
+  </ul>
+  <ul>
+    <li>1: one</li>
+    <li>2: two</li>
+    <li>3: three</li>
+  </ul>
+  <ul>
+    <li>There are no values</li>
+  </ul>
+  <ul>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ul>
+  <ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+</div>
+<div class="section">
+  <h2 id="title2">Mixins</h2>
+    <ul>
+      <li>foo</li>
+      <li>bar</li>
+      <li>baz</li>
+    </ul>
+    <ul>
+      <li>foo</li>
+      <li>bar</li>
+      <li>baz</li>
+    </ul>
+  <ul>
+      <li class="pet">cat</li>
+      <li class="pet">dog</li>
+      <li class="pet">pig</li>
+  </ul>
+    <div class="article">
+      <div class="article-wrapper">
+        <h3>Hello world</h3>
+        <p>No content provided</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-wrapper">
+        <h3>Hello world</h3>
+        <p>This is my</p>
+        <p>Amazing article</p>
+      </div>
+    </div><a href="/foo" class="btn">foo</a><a href="/foo" class="btn">foo</a>
+    <ul id="my-list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+</div>
+<div class="section">
+  <h2 id="title2">Plain Text</h2>Plain text can include <strong>html</strong>
+  <p>It must always be on its own line</p>
+  <p>Plain text can include <strong>html</strong></p>
+  <script>
+    if (usingJade)
+      console.log('you are awesome')
+    else
+      console.log('use jade')
+    
+  </script>
+</div>
+<div class="section">
+  <h2 id="title2">Tags</h2>
+  <h3>Nested</h3>
+  <ul>
+    <li>Item A</li>
+    <li>Item B</li>
+    <li>Item C</li>
+  </ul>
+  <h3>Self closing</h3>
+  <p>Jade also knows which elements are self closing.</p>
+  <!-- img-->
+  <!-- foo/-->
+  <!-- foo(bar='baz')/-->
+  <h3>Block Expansion</h3>
+  <p>To save space, jade provides an inline syntax for nested tags.</p>
+  <!-- a: img-->
+</div>
+    
+    
+    
+    
+    
+  </body>
+</html>
